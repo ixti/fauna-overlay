@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="The heroku command-line interface (CLI)."
 HOMEPAGE="https://devcenter.heroku.com/categories/command-line"
-SRC_URI="https://cli-assets.heroku.com/heroku-linux-x64.tar.xz"
+SRC_URI="https://cli-assets.heroku.com/heroku-v${PV}/heroku-v${PV}-linux-x64.tar.xz -> ${P}.tar.xz"
 
 LICENSE="ISC"
 SLOT="0"
