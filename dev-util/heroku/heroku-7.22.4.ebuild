@@ -6,23 +6,23 @@ EAPI=7
 DESCRIPTION="The heroku command-line interface (CLI)."
 HOMEPAGE="https://devcenter.heroku.com/categories/command-line"
 SRC_URI="https://cli-assets.heroku.com/heroku-v${PV}/heroku-v${PV}-linux-x64.tar.xz -> ${P}.tar.xz"
+RESTRICT="mirror strip bindist"
 
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="app-arch/xz-utils"
+DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-src_unpack() {
-	unpack "${A}"
-	mv "${PN}" "${P}"
-}
+S="${WORKDIR}/${PN}"
 
 src_install() {
-	dodir "/opt/${PN}"
-	cp -ar . "${D}/opt/${PN}"
-	dosym "../../opt/${PN}/bin/heroku" /usr/bin/heroku
+	insinto "/opt/${PN}"
+	doins -r *
+	dosym "/opt/${PN}/bin/heroku" "/usr/bin/${PN}"
+	fperms +x "/opt/${PN}/bin/heroku"
+	fperms +x "/opt/${PN}/bin/node"
 }
