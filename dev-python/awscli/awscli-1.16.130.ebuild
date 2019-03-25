@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python{2_7,3_4,3_5,3_6} )
 inherit bash-completion-r1 distutils-r1
 
 DESCRIPTION="Universal Command Line Environment for AWS"
-HOMEPAGE="https://pypi.org/project/awscli/"
+HOMEPAGE="https://aws.amazon.com/cli/"
 SRC_URI="https://github.com/aws/aws-cli/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Apache-2.0"
